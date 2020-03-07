@@ -1,0 +1,11 @@
+{
+  "name": "@graphless/cli",
+  "version": "0.0.1",
+  "description": "Graphless CLI - GraphQL Framework for serverless",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
