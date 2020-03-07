@@ -1,0 +1,8 @@
+{
+  "name": "graphless",
+  "version": "0.0.1",
+  "description": "Serverless GraphQL Framework",
+  "main": "app.js",
+  "author": "",
+  "license": "ISC"
+}
