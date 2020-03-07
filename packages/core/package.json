@@ -1,11 +1,26 @@
 {
   "name": "@graphless/core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "GraphQL Framework for Serverless (Core)",
   "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+  "keywords": [
+    "@graphless/core",
+    "graphql",
+    "serverless",
+    "gcloud",
+    "gateway"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Marvinified/graphless.git",
+    "directory": "packages/core"
   },
-  "author": "",
+  "engines": {
+    "node": ">=8"
+  },
+  "bugs": {
+    "url": "https://github.com/Marvinified/graphless/issues"
+  },
+  "author": "Marvin Tunji-ola",
   "license": "MIT"
 }
