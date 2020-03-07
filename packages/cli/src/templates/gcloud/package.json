@@ -6,12 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "graphless start gcloud",
-    "deploy": "gcloud functions deploy gateway --env-vars-file .env.yaml --runtime nodejs8 --trigger-http "
+    "deploy": "graphless deploy gcloud"
   },
   "dependencies": {
     "@apollo/federation": "^0.13.2",
     "@google-cloud/functions-framework": "^1.4.0",
-    "@graphless/gcloud": "file:../../packages/gcloud"
+    "@graphless/gcloud": "^0.0.1"
   },
   "author": "",
   "license": "ISC"

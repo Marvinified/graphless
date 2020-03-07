@@ -22,6 +22,14 @@ switch (command) {
     require("./tasks/init")(args);
     break;
 
+  case "start":
+    require("./tasks/start")(args);
+    break;
+
+  case "deploy":
+    require("./tasks/deploy.js")(args);
+    break;
+
   case "version":
     require("./tasks/version")(args);
     break;

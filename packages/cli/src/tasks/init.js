@@ -25,7 +25,9 @@ module.exports = async args => {
     }
 
     //copy template
-    const templatePath = `${__dirname}/../templates/gcloud`;
+    const projectType = "gcloud";
+
+    const templatePath = `${__dirname}/../templates/${projectType}`;
     console.log("\nCreating a Graphless app in " + dir + "\n");
     bootstrap(templatePath, dir);
     spinner.succeed(`Initiated project`);

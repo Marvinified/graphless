@@ -3,11 +3,29 @@
   "version": "0.0.1",
   "description": "Graphless CLI - GraphQL Framework for serverless",
   "main": "./src/index.js",
+  "keywords": [
+    "@graphless/cli",
+    "cli",
+    "graphless",
+    "severless",
+    "grapghql"
+  ],
   "bin": {
     "graphless": "./src/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Marvinified/graphless.git",
+    "directory": "packages/cli"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "bugs": {
+    "url": "https://github.com/Marvinified/graphless/issues"
   },
   "author": "Marvin Tunji-ola",
   "license": "MIT",
