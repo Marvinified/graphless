@@ -1,0 +1,10 @@
+[
+  {
+    "name": "users",
+    "path": "/graphql/users"
+  },
+  {
+    "name": "posts",
+    "path": "/graphql/posts"
+  }
+]
