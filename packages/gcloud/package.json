@@ -1,8 +1,16 @@
 {
   "name": "@graphless/gcloud",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "GraphQL Framework for Serverless (Google Cloud Functions)",
   "main": "index.js",
+  "keywords": [
+    "@graphless/gcloud",
+    "cloud functions",
+    "cli",
+    "graphless",
+    "severless",
+    "grapghql"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
   },
