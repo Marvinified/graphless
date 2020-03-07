@@ -35,11 +35,15 @@ module.exports = async args => {
     // install packages
     const installing = ora("Installing Packages!").start();
     console.log("\n");
-    const result = spawn.sync(
+    spawn.sync(
       "npm",
       ["install", "--save", "--save-exact", "--loglevel", "error"],
       { cwd: process.cwd() + "/" + dir, stdio: "inherit" }
     );
+    spawn.sync("git", ["init"], {
+      cwd: process.cwd() + "/" + dir,
+      stdio: "inherit"
+    });
     installing.succeed("Packages Installed");
 
     const info = `\nSuccess! Created  ${chalk.magenta(dir)}
