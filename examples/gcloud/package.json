@@ -1,12 +1,12 @@
 {
   "name": "graphless-example-gcloud",
   "version": "0.0.1",
-  "description": "",
+  "description": "Example GCloud",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "export CLOUD_URL='https://example.com' && functions-framework --target=users",
-    "deploy": "gcloud functions deploy gateway --env-vars-file .env.yaml --runtime nodejs8 --trigger-http "
+    "start": "graphless start gcloud",
+    "deploy": "graphless deploy gcloud"
   },
   "dependencies": {
     "@apollo/federation": "^0.13.2",

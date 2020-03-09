@@ -1,10 +1,10 @@
 [
   {
     "name": "users",
-    "path": "/graphql/users"
+    "path": "/src/graphql/users"
   },
   {
     "name": "posts",
-    "path": "/graphql/posts"
+    "path": "/src/graphql/posts"
   }
 ]
