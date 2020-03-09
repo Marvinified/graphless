@@ -1,6 +1,6 @@
 {
   "name": "@graphless/cli",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Graphless CLI - GraphQL Framework for serverless",
   "main": "./src/index.js",
   "keywords": [
