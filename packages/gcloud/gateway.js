@@ -36,6 +36,7 @@ module.exports = () => {
 
 function loadDevGateway() {
   if (process.env.GRAPHLESS_LOAD_GATEWAY) {
+
     const GRAPHLESS_LOCAL_GRAPHS_MAP = JSON.parse(process.env.GRAPHLESS_LOCAL_GRAPHS_MAP)
     const serviceList = GRAPHLESS_LOCAL_GRAPHS_MAP.map(graph => {
       return graph;

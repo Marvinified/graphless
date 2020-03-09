@@ -11,7 +11,7 @@
   "dependencies": {
     "@apollo/federation": "^0.13.2",
     "@google-cloud/functions-framework": "^1.4.0",
-    "@graphless/gcloud": "^0.0.1"
+    "@graphless/gcloud": "^0.0.2"
   },
   "author": "",
   "license": "ISC"

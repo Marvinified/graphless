@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "@apollo/federation": "^0.13.2",
-    "@google-cloud/functions-framework": "^1.4.0",
     "@graphless/gcloud": "file:../../packages/gcloud"
+  },
+  "devDependencies": {
+    "@google-cloud/functions-framework": "^1.4.0",
+    "wait-cli": "^1.0.0"
   },
   "author": "",
   "license": "ISC"

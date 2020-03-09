@@ -1,7 +1,6 @@
 const chalk = require("chalk");
 const mkdir = require("mkdirp");
 const fs = require("fs");
-const crossSpawn = require("cross-spawn");
 const spawn = require("../lib/spawn");
 const files = require("../lib/files");
 const mark = chalk.green("✔︎ ");
@@ -43,8 +42,8 @@ module.exports = async args => {
     console.log(`\n${mark} Creating a Graphless app in  ${dir} \n`);
     bootstrap(templatePath, dir);
 
-    spawn(
-      "npm",
+    spawn.spawn(
+      "yarn",
       ["install"],
       {
         cwd: process.cwd() + "/" + dir,
@@ -58,7 +57,7 @@ module.exports = async args => {
           return;
         }
 
-        spawn(
+        spawn.spawn(
           "git",
           ["init"],
           {
@@ -97,7 +96,7 @@ function success(dir) {
 }
 
 function revert(dir) {
-  spawn(
+  spawn.spawn(
     "rm",
     ["-rf", dir],
     {
