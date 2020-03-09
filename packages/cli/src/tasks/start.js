@@ -26,7 +26,7 @@ module.exports = args => {
   let resource = ''
   GRAPHLESS_LOCAL_GRAPHS_MAP.forEach(({ url }) => resource += " " + url.replace("http://", ""))
   console.log(resource)
-  cmd += "&  (  await tcp " + resource + " &&  echo '\n✅ Starting up Gateway on http://localhost:" + process.env.PORT || 8080 + "\n\n'" + ` &&  export GRAPHLESS_LOAD_GATEWAY=true && functions-framework --target=gateway --port=${process.env.PORT || 8080}  )`
+  cmd += "&  (  await tcp " + resource + ` &&  echo '\n✅ Starting up Gateway on http://localhost:${process.env.PORT || 8080}\n\n' &&  export GRAPHLESS_LOAD_GATEWAY=true && functions-framework --target=gateway --port=${process.env.PORT || 8080}  )`
 
   spawn.sync(
     cmd,
