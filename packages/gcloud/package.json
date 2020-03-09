@@ -23,10 +23,9 @@
     "node": ">=8"
   },
   "bugs": {
-    "url": "        https://github.com/Marvinified/graphless/issues"
+    "url": "https://github.com/Marvinified/graphless/issues"
   },
   "dependencies": {
-    "@apollo/federation": "^0.13.2",
     "@apollo/gateway": "^0.13.2",
     "@graphless/core": "0.0.2",
     "apollo-server-cloud-functions": "^2.11.0"
