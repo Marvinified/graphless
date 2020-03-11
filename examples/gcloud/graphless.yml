@@ -1,0 +1,4 @@
+app:
+  provider: gcloud
+  dev: 
+    port: 8080

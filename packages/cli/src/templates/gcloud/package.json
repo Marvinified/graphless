@@ -5,12 +5,12 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "graphless start gcloud",
-    "deploy": "graphless deploy gcloud"
+    "start": "graphless start",
+    "deploy": "graphless deploy"
   },
   "dependencies": {
     "@apollo/federation": "^0.13.2",
-    "@graphless/gcloud": "^0.0.2"
+    "@graphless/gcloud": "^0.0.3"
   },
   "devDependencies": {
     "@google-cloud/functions-framework": "^1.4.0",

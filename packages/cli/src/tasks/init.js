@@ -89,7 +89,7 @@ function success(dir) {
   You can run the following command to get started!
 
     $ ${chalk.magenta("cd")} ${dir}
-    $ ${chalk.magenta("npm")} start
+    $ ${chalk.magenta("yarn")} start
   `;
 
   console.log(info);
