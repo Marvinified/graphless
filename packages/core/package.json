@@ -1,6 +1,6 @@
 {
   "name": "@graphless/core",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "GraphQL Framework for Serverless (Core)",
   "main": "src/index.js",
   "keywords": [
@@ -22,5 +22,9 @@
     "url": "https://github.com/Marvinified/graphless/issues"
   },
   "author": "Marvin Tunji-ola",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "read-yaml": "^1.1.0"
+  }
 }

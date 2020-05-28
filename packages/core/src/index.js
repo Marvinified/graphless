@@ -1,2 +1,2 @@
 exports.registerGraphFunctions = require("./registerGraphFunctions");
-exports.getGraphJSON = require("./utils/getGraphJSON");
+exports.getGraphlessConfig = require("./utils/getGraphlessConfig");

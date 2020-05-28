@@ -1,15 +1,14 @@
-const getGraphJSON = require("./utils/getGraphJSON");
+const getGraphlessConfig = require("./utils/getGraphlessConfig");
 
-module.exports = gateway => graphJSONPath => {
+module.exports = (gateway) => () => {
   // init
   const app = {};
-
-  const graphs = getGraphJSON(graphJSONPath);
-  graphs.map(graph => {
-    app[graph.name] = require(process.cwd() + graph.path);
-  });
-
-  // gatewa
+  const config = getGraphlessConfig();
+  const graphs = config.app.graphs;
+  for (const key in graphs) {
+    const graph = graphs[key];
+    app[key] = require(process.cwd() + graph.path);
+  }
   app.gateway = gateway;
 
   return app;
