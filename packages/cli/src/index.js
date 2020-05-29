@@ -22,6 +22,10 @@ switch (command) {
     require("./tasks/init")(args);
     break;
 
+  case "generate":
+    require("./tasks/generate")(args);
+    break;
+
   case "start":
     require("./tasks/start")(args);
     break;
@@ -40,5 +44,6 @@ switch (command) {
 
   default:
     console.error(chalk.red("\nUnknown Command!!!"));
+    require("./tasks/help")(args);
     break;
 }
