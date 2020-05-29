@@ -3,7 +3,7 @@ const {
   gql,
   buildFederatedSchema,
 } = require("@graphless/gcloud");
-// const { buildFederatedSchema } = require("@apollo/federation");
+
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
   type Query {
