@@ -1,6 +1,5 @@
 const fs = require("fs");
 const chalk = require("chalk");
-const config = require("../../utils/config");
 const { getGraphlessConfig } = require("@graphless/core");
 
 module.exports = (args) => {
@@ -31,6 +30,6 @@ function handleByProvider(provider) {
 }
 
 function getProvider() {
-  const configurations = config();
+  const configurations = getGraphlessConfig();
   return configurations.app.provider;
 }
