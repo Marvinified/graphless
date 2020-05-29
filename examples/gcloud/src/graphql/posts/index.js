@@ -1,5 +1,9 @@
-const { ApolloServer, gql } = require("@graphless/gcloud");
-const { buildFederatedSchema } = require("@apollo/federation");
+const {
+  ApolloServer,
+  gql,
+  buildFederatedSchema,
+} = require("@graphless/gcloud");
+// const { buildFederatedSchema } = require("@apollo/federation");
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
   type Query {
@@ -10,19 +14,19 @@ const typeDefs = gql`
 // Provide resolver functions for your schema fields
 const resolvers = {
   Query: {
-    posts: () => "Hello Posts!"
-  }
+    posts: () => "Hello Posts!",
+  },
 };
 
 const server = new ApolloServer({
   schema: buildFederatedSchema([
     {
       typeDefs,
-      resolvers
-    }
+      resolvers,
+    },
   ]),
   playground: true,
-  introspection: true
+  introspection: true,
 });
 
 module.exports = server.createHandler();

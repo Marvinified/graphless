@@ -1,41 +1,60 @@
 const chalk = require("chalk");
-const spawn = require("../../lib/spawn");
+const spawn = require("../../utils/spawn");
 
 module.exports = (services, port) => {
-    const GRAPHLESS_LOCAL_GRAPHS_MAP = [];
+  const GRAPHLESS_LOCAL_GRAPHS_MAP = [];
+  let dynamicport = port;
+  // Set Environment as Development
+  let cmd = `export NODE_ENV='development'`;
 
-    let cmd = `export NODE_ENV='development'`
+  // Setup each graph function
+  for (const key in services) {
+    // a graph funtion
+    const service = services[key];
+    // increase port by one for each function
+    dynamicport += 1;
+    // start each function
+    cmd += ` & functions-framework --target=${key} --port=${dynamicport}`;
+    // SAve graph config for later use
+    GRAPHLESS_LOCAL_GRAPHS_MAP.push({
+      name: key,
+      url: `http://localhost:${dynamicport}`,
+    });
+  }
 
-    for (const service of services) {
-        port += 1
-        cmd += ` & functions-framework --target=${service.name} --port=${port}`
+  // Save All graph config in enviroment
+  process.env.GRAPHLESS_LOCAL_GRAPHS_MAP = JSON.stringify(
+    GRAPHLESS_LOCAL_GRAPHS_MAP
+  );
 
-        GRAPHLESS_LOCAL_GRAPHS_MAP.push({
-            name: service.name,
-            url: `http://localhost:${port}`
-        })
+  // Bootstrap resource to await before spinning up gateway
+  let resource = "";
+  GRAPHLESS_LOCAL_GRAPHS_MAP.forEach(({ url }) => {
+    resource += " " + url.replace("http://", "");
+  });
 
+  // Await resources to boot up then start gateway
+  cmd += `&  (  await tcp ${resource} `;
+  // Print information
+  cmd += ` &&  echo ${chalk.cyanBright(
+    `'\n✅ Starting up Gateway on http://localhost:${port}\n\n'`
+  )}`;
+  // Start Gateway
+  cmd += ` &&  export GRAPHLESS_LOAD_GATEWAY=true && functions-framework --target=gateway --port=${port})`;
+
+  spawn.sync(
+    cmd,
+    [],
+    {
+      cwd: process.cwd(),
+      // stdio: "inherit",
+      encoding: "utf8",
+      shell: true,
+    },
+    (error) => {
+      console.log(chalk.red(error));
+      console.log(chalk.red("Couldn't start gateeway"));
+      process.exit();
     }
-
-    process.env.GRAPHLESS_LOCAL_GRAPHS_MAP = JSON.stringify(GRAPHLESS_LOCAL_GRAPHS_MAP);
-    console.log({GRAPHLESS_LOCAL_GRAPHS_MAP: process.env.GRAPHLESS_LOCAL_GRAPHS_MAP})
-
-    let resource = ''
-    GRAPHLESS_LOCAL_GRAPHS_MAP.forEach(({ url }) => resource += " " + url.replace("http://", ""))
-    cmd += `&  (  await tcp ${resource}  &&  echo '\n✅ Starting up Gateway on http://localhost:${process.env.PORT || 8080}\n\n' &&  export GRAPHLESS_LOAD_GATEWAY=true && functions-framework --target=gateway --port=${process.env.PORT || 8080}  )`
-
-    spawn.sync(
-        cmd,
-        [],
-        {
-            cwd: process.cwd(),
-            stdio: "inherit",
-            encoding: "utf8",
-            shell: true
-        }, (error) => {
-            console.log(chalk.red(error));
-            console.log(chalk.red("Couldn't start gateeway"));
-            process.exit()
-        }
-    );
-}
+  );
+};

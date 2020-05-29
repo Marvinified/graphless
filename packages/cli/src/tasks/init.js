@@ -1,11 +1,12 @@
 const chalk = require("chalk");
 const mkdir = require("mkdirp");
 const fs = require("fs");
-const spawn = require("../lib/spawn");
-const files = require("../lib/files");
+const spawn = require("../utils/spawn");
+const files = require("../utils/files");
 const mark = chalk.green("✔︎ ");
+var inquirer = require("inquirer");
 
-module.exports = async args => {
+module.exports = async (args) => {
   console.log(`\nInitiating project`);
 
   const dir = args._[1];
@@ -37,7 +38,22 @@ module.exports = async args => {
 
   try {
     //copy template
-    const projectType = "gcloud";
+    // const projectType = "gcloud";
+
+    const { projectType } = await inquirer.prompt([
+      {
+        type: "list",
+        name: "projectType",
+        message: "Choose your cloud provider?",
+        choices: [
+          { name: "Google Cloud Functions", value: "gcloud" },
+          { name: "Azure - In Development", value: "azure", disabled: true },
+          { name: "Lambda - In Development", value: "lambda", disabled: true },
+        ],
+      },
+      /* Pass your questions in here */
+    ]);
+
     const templatePath = `${__dirname}/../templates/${projectType}`;
     console.log(`\n${mark} Creating a Graphless app in  ${dir} \n`);
     bootstrap(templatePath, dir);
@@ -48,9 +64,9 @@ module.exports = async args => {
       {
         cwd: process.cwd() + "/" + dir,
         stdio: "inherit",
-        encoding: "utf8"
+        encoding: "utf8",
       },
-      error => {
+      (error) => {
         if (error) {
           console.log(chalk.red(error));
           revert();
@@ -63,9 +79,9 @@ module.exports = async args => {
           {
             cwd: process.cwd() + "/" + dir,
             stdio: "inherit",
-            encoding: "utf8"
+            encoding: "utf8",
           },
-          error => {
+          (error) => {
             if (error) {
               console.log(chalk.red(error));
               revert(dir);
@@ -102,9 +118,9 @@ function revert(dir) {
     {
       cwd: process.cwd(),
       stdio: "inherit",
-      encoding: "utf8"
+      encoding: "utf8",
     },
-    error => {
+    (error) => {
       if (error) {
         console.log(chalk.red(error));
       }
@@ -117,7 +133,7 @@ function bootstrap(templatePath, distinationPath) {
   const CWD = process.cwd();
   const filesToCreate = fs.readdirSync(templatePath);
 
-  filesToCreate.forEach(file => {
+  filesToCreate.forEach((file) => {
     const origFilePath = `${templatePath}/${file}`;
     // get stats about the current file
     const stats = fs.statSync(origFilePath);
