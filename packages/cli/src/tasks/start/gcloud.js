@@ -47,7 +47,7 @@ module.exports = (services, port) => {
     [],
     {
       cwd: process.cwd(),
-      // stdio: "inherit",
+      stdio: "inherit",
       encoding: "utf8",
       shell: true,
     },

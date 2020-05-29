@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@apollo/federation": "^0.16.2",
-    "@graphless/gcloud": "file:../../packages/gcloud"
+    "@graphless/gcloud": "^0.0.3"
   },
   "devDependencies": {
     "@google-cloud/functions-framework": "^1.5.1",

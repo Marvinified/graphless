@@ -41,7 +41,6 @@ function loadDevGateway() {
       return graph;
     });
 
-    console.log({ serviceList });
     const gateway = new ApolloGateway({
       serviceList,
     });
