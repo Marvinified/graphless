@@ -9,11 +9,11 @@
     "deploy": "graphless deploy gcloud"
   },
   "dependencies": {
-    "@apollo/federation": "^0.13.2",
+    "@apollo/federation": "^0.16.2",
     "@graphless/gcloud": "file:../../packages/gcloud"
   },
   "devDependencies": {
-    "@google-cloud/functions-framework": "^1.4.0",
+    "@google-cloud/functions-framework": "^1.5.1",
     "wait-cli": "^1.0.0"
   },
   "author": "",

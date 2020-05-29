@@ -1,4 +1,9 @@
 app:
   provider: gcloud
-  dev: 
+  dev:
     port: 8080
+  graphs:
+    users:
+      path: /src/graphql/users
+    posts:
+      path: /src/graphql/posts
