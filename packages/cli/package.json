@@ -11,7 +11,8 @@
     "grapghql"
   ],
   "bin": {
-    "graphless": "./src/index.js"
+    "graphless": "./src/index.js",
+    "graphless-wait": "./src/utils/await.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -44,6 +45,7 @@
     "ora": "^4.0.3",
     "read-yaml": "^1.1.0",
     "touch": "^3.1.0",
-    "write-yaml": "^1.0.0"
+    "write-yaml": "^1.0.0",
+    "wait-cli": "^1.0.0"
   }
 }

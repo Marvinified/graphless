@@ -3,7 +3,6 @@
 const chalk = require("chalk");
 var args = require("minimist")(process.argv.slice(2));
 const hello = require("./tasks/hello");
-const init = require("./tasks/init");
 // Hello
 hello();
 
@@ -26,8 +25,8 @@ switch (command) {
     require("./tasks/generate")(args);
     break;
 
-  case "start":
-    require("./tasks/start")(args);
+  case "serve":
+    require("./tasks/serve")(args);
     break;
 
   case "deploy":

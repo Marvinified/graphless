@@ -34,10 +34,10 @@ module.exports = (services, port) => {
   });
 
   // Await resources to boot up then start gateway
-  cmd += `&  (  await tcp ${resource} `;
+  cmd += `&  (  graphless-wait tcp ${resource} `;
   // Print information
   cmd += ` &&  echo ${chalk.cyanBright(
-    `'\n✅ Starting up Gateway on http://localhost:${port}\n\n'`
+    `'\n🔥 Starting up Gateway on http://localhost:${port}\n\n'`
   )}`;
   // Start Gateway
   cmd += ` &&  export GRAPHLESS_LOAD_GATEWAY=true && functions-framework --target=gateway --port=${port})`;
