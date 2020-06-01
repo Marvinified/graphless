@@ -1,6 +1,6 @@
 {
   "name": "@graphless/core",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "GraphQL Framework for Serverless (Core)",
   "main": "src/index.js",
   "keywords": [

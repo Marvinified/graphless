@@ -105,7 +105,7 @@ function success(dir) {
   You can run the following command to get started!
 
     $ ${chalk.magenta("cd")} ${dir}
-    $ ${chalk.magenta("yarn")} start
+    $ ${chalk.magenta("yarn")} serve
   `;
 
   console.log(info);

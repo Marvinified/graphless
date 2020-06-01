@@ -1,6 +1,6 @@
 {
   "name": "@graphless/cli",
-  "version": "0.0.7",
+  "version": "0.0.10",
   "description": "Graphless CLI - GraphQL Framework for serverless",
   "main": "./src/index.js",
   "keywords": [
@@ -31,7 +31,7 @@
   "author": "Marvin Tunji-ola",
   "license": "MIT",
   "dependencies": {
-    "@graphless/core": "^0.0.3",
+    "@graphless/core": "^0.0.4",
     "boxen": "^4.2.0",
     "chalk": "^3.0.0",
     "clear": "^0.1.0",

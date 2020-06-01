@@ -5,16 +5,14 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "graphless start gcloud",
-    "deploy": "graphless deploy gcloud"
+    "serve": "graphless serve"
   },
   "dependencies": {
     "@apollo/federation": "^0.16.2",
-    "@graphless/gcloud": "^0.0.3"
+    "@graphless/gcloud": "^0.0.4"
   },
   "devDependencies": {
-    "@google-cloud/functions-framework": "^1.5.1",
-    "wait-cli": "^1.0.0"
+    "@google-cloud/functions-framework": "^1.5.1"
   },
   "author": "",
   "license": "ISC"
