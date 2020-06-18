@@ -157,7 +157,7 @@ The basic structure of a Graphless Project consist:
   // Provide resolver functions for your schema fields
   const resolvers = {
     Query: {
-      posts: () => "Hello Posts!",
+      notifications: () => "Hello Notifications!",
     },
   };
 
