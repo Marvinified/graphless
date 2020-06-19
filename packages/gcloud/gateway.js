@@ -9,7 +9,6 @@ module.exports = () => {
     for (const key in services) {
       serviceList.push({
         name: key,
-        // url: process.env.CLOUD_URL
         url: process.env.CLOUD_URL + "/" + key,
       });
     }
