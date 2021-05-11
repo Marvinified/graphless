@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@graphless/core@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@graphless/core/-/core-0.0.3.tgz#19fb93c195a698c92f6a33f53bc3d4d91507b4a0"
-  integrity sha512-lCZTmAMMndpuoKcl8fSCI0y2E5tXpM2K+VXODJ8PFxhYbhyd7aDfAUmkCAPBcu8Qc3enLGOyksMJaF/xGdu//Q==
+"@graphless/core@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@graphless/core/-/core-0.0.4.tgz#9c45094ea619646b5f651d28c18848b8706b46b9"
+  integrity sha512-g3fNeCazz/o5rRiMWJIV2/CTFsEkoRxLCzX2FR+duuLESwu7sPImNM3onWjSfe9ty8TtDANLuUCFkX8J7X7lyQ==
   dependencies:
     chalk "^4.0.0"
     read-yaml "^1.1.0"
@@ -476,9 +476,9 @@ js-yaml@^3.8.2, js-yaml@^3.8.3:
     esprima "^4.0.0"
 
 lodash@^4.17.15:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 log-symbols@^3.0.0:
   version "3.0.0"
